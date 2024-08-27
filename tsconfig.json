@@ -8,10 +8,13 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // allows use import default
-    "esModuleInterop": true //allow module import instaed require()
+    "esModuleInterop": true, //allow module import instaed require()
+    "types": ["webpack"],
+    "baseUrl": "." // for absolute import
   },
 
   "ts-node": {
+    // fix error related with module exports
     "compilerOptions": {
       "module": "CommonJS"
     }
