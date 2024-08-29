@@ -4,7 +4,7 @@
     "noImplicitAny": true, // forbids to use variables without types
     "module": "ESNext",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // allows use import default
