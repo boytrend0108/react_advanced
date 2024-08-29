@@ -6,8 +6,14 @@ export interface BuildPath {
   html: string;
 }
 
+export interface BuildEnv {
+  PORT: string | number;
+  MODE: BuildMode;
+}
+
 export interface BuildOptions {
   mode: BuildMode;
   paths: BuildPath;
   isDev: boolean;
+  port: number | string;
 }
