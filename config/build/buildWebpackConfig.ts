@@ -1,10 +1,11 @@
-import path from "path";
 import webpack from "webpack";
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { BuildOptions } from "./types/config";
 import { buildDevServer } from "./buildDevServer";
+
+
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
@@ -19,11 +20,11 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       clean: true, //delete old files
     },
 
-    plugins: buildPlugins(paths),
+    plugins: buildPlugins(paths, options),
 
     module: {
       // rules configure loaders (loaders handle not-js files (.ts, .png etc))
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
 
     resolve: buildResolvers(), // allows importing without an extension(... from './index')

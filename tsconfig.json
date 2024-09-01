@@ -18,5 +18,7 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+
+  "include": ["src/**/*", "src/global.d.ts"]
 }
