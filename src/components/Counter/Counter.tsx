@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import * as classes from './Counter.module.scss';
 
-export const Counter = () => {
+export const Counter = React.memo(() => {
   const [counter, setCounter] = useState(0);
+  console.log('counter');
 
   return (
     <div className={classes.counter}>
@@ -16,4 +17,4 @@ export const Counter = () => {
       </button>
     </div>
   );
-};
+});
