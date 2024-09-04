@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import './normalize/reset.scss';
+@import './themes';
+@import './variables';
+
+.app {
+  font: var(--font-m);
+  transition: background-color ease 500ms, color ease 500ms;
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
