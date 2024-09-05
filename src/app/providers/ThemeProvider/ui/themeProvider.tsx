@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
-import { ThemeContext } from './themeContext';
-import { useTheme } from './useTheme';
+import { useMemo } from 'react';
+import { useTheme } from '../lib/useTheme';
+import { ThemeContext } from '../lib/themeContext';
 
 type Props = {
   children: React.ReactNode;
