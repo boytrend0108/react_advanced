@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as classes from './Counter.module.scss';
 
-export const Counter = () => {
+const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   return (
@@ -17,3 +17,5 @@ export const Counter = () => {
     </div>
   );
 };
+
+export default Counter;
