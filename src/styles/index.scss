@@ -9,4 +9,5 @@
 
   color: var(--primary-color);
   min-height: 100vh;
+  transition: background-color ease 300ms, color ease 300ms;
 }
