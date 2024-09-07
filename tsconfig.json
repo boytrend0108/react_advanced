@@ -10,7 +10,10 @@
     "allowSyntheticDefaultImports": true, // allows use import default
     "esModuleInterop": true, //allow module import instaed require()
     "types": ["webpack"],
-    "baseUrl": "." // for absolute import
+    "baseUrl": ".", // for absolute import
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
 
   "ts-node": {

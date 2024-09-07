@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import * as classes from './Counter.module.scss';
+import * as classes from './About.module.scss';
 
-const Counter = () => {
+const About = () => {
   const [counter, setCounter] = useState(0);
 
   return (
@@ -18,4 +18,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default About;

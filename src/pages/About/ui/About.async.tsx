@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const CounterAsync = React.lazy(
+export const AboutAsync = React.lazy(
   () =>
     new Promise((resolve) => {
       setTimeout(() => {
         //@ts-ignore
-        resolve(import('./Counter'));
+        resolve(import('./About'));
       }, 1000);
     })
 );
