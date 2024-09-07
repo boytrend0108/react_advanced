@@ -7,7 +7,7 @@ import { CounterAsync } from './pages/Counter/Counter.async';
 
 export const App = () => {
   return (
-    <div className='app'>
+    <div className='app dark'>
       <Link to='/'>Main</Link>
       <Link to='/counter'>Counter</Link>
 
