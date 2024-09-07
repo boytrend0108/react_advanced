@@ -1,16 +1,17 @@
 import { Route, Routes } from 'react-router';
+import cn from 'classnames';
 import './styles/index.scss';
 import { Link } from 'react-router-dom';
-import { MainPageAsync } from './pages/MainPage.async';
+import { MainPageAsync } from '../pages/MainPage.async';
 import { Suspense, useContext } from 'react';
-import { CounterAsync } from './pages/Counter/Counter.async';
-import { ThemeContext } from './theme/ThemeContext';
+import { CounterAsync } from '../pages/Counter/Counter.async';
+import { ThemeContext } from '../theme/ThemeContext';
 
 export const App = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={cn('app', theme)}>
       <Link to='/'>Main</Link>
       <Link to='/counter'>Counter</Link>
       <button onClick={() => setTheme()}>Toogle</button>
