@@ -31,9 +31,25 @@ export function buildLoaders(options: BuildOptions): Rules[] {
     ],
   }
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i, // images and fonts
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
   const loaders = [
     typeScriptLoader,
     sassLoader,
+    svgLoader,
+    fileLoader,
   ]
 
   return loaders;

@@ -7,12 +7,11 @@ import { Navbar } from 'widgets/Navbar';
 import { useTheme } from './providers/ThemeProvider';
 
 export const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={cn('app', theme)}>
       <Navbar />
-      <button onClick={() => toggleTheme()}>Toogle</button>
 
       <AppRouter />
     </div>
