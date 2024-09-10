@@ -15,7 +15,16 @@ const defaultTheme =
 export const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
+  function toogleTheme() {
+    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+    setTheme(newTheme);
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+  }
+
+  const defaultProps = useMemo(
+    () => ({ theme, setTheme: toogleTheme }),
+    [theme]
+  );
 
   return (
     <ThemeContext.Provider value={defaultProps}>
