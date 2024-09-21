@@ -18,7 +18,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       clean: true, //delete old files
     },
 
-    plugins: buildPlugins(paths, options),
+    plugins: buildPlugins(paths, options, isDev),
 
     module: {
       // rules configure loaders (loaders handle not-js files (.ts, .png etc))
