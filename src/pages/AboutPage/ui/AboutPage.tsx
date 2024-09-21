@@ -6,6 +6,7 @@ const AboutPage = () => {
   return (
     <div className='about'>
       <h1>{t('About')}</h1>
+      <h1>{t('test2', { ns: 'about' })}</h1>
     </div>
   );
 };

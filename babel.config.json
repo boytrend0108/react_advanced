@@ -1,0 +1,18 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "i18next-extract",
+      {
+        "nsSeparator": "~",
+        "outputPath": "public/locales/{{locale}}/{{ns}}.json",
+        "locales": ["en", "ua"],
+        "ns": ["about", "main"],
+        "defaultValue": "",
+        "keyAsDefaultValue": true,
+        "jsonIndent": 2,
+        "useI18nextDefaultValue": true
+      }
+    ]
+  ]
+}
