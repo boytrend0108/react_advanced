@@ -36,7 +36,7 @@ export function buildLoaders(options: BuildOptions): Rules[] {
             localIdentName: options.isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
           },
         },
-      }, ,
+      },
       // Compiles Sass to CSS
       "sass-loader",
     ],

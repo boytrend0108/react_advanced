@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import * as cls from './Sidebar.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 

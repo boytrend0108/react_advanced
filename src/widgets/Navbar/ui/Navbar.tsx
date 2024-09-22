@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import * as cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import React from 'react';
 
 interface Props {
   className?: string;

@@ -4,7 +4,8 @@ export const AboutPageAsync = lazy(
   () =>
     new Promise((res) => {
       setTimeout(() => {
-        //@ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
         res(import('./AboutPage'));
       }, 1000);
     })
