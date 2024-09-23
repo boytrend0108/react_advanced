@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // allows use import default
     "esModuleInterop": true, //allow module import instaed require()
-    "types": ["webpack"],
+    "types": ["webpack", "jest", "node"],
     "baseUrl": ".", // for absolute import
     "paths": {
       "*": ["./src/*"]
