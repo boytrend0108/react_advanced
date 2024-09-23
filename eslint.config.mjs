@@ -11,8 +11,8 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   i18next.configs['flat/recommended'],
+  { ignores: ['dist/*'] },
   {
-    ignores: ['dist/*'],
     rules: {
       'no-unused-vars': 'warn',
       'no-undef': 'error',
@@ -28,12 +28,10 @@ export default [
         __IS_DEV__: 'writable',
         __dirname: 'writable',
         React: 'readonly',
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
       },
-    },
-  },
-  {
-    env: {
-      jest: true,
     },
   },
 ];
