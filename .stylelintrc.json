@@ -1,18 +1,53 @@
 {
-  "extends": "stylelint-config-clean-order/error",
-  "plugins": [
-    "stylelint-order"
-  ],
+  "extends": "stylelint-config-standard-scss",
   "rules": {
+    "selector-class-pattern": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "declaration-empty-line-before": null,
     "order/order": [
       "custom-properties",
       "declarations"
     ],
     "order/properties-order": [
-      "width",
-      "height",
-      "color",
-      "background-color"
+      {
+        "groupName": "dimensions",
+        "emptyLineBefore": "always",
+        "properties": [
+          "height",
+          "width",
+          "max-width",
+          "min-width"
+        ]
+      },
+      {
+        "groupName": "font",
+        "emptyLineBefore": "always",
+        "properties": [
+          "font-size",
+          "font-weight"
+        ]
+      },
+      {
+        "groupName": "margin/padding",
+        "emptyLineBefore": "always",
+        "properties": [
+          "margin",
+          "padding"
+        ]
+      },
+      {
+        "groupName": "display",
+        "emptyLineBefore": "always",
+        "properties": [
+          "display",
+          "flex-diraction",
+          "align-items",
+          "justify-content"
+        ]
+      }
     ]
-  }
+  },
+  "plugins": [
+    "stylelint-order"
+  ]
 }

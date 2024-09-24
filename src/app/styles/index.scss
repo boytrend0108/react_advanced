@@ -5,10 +5,12 @@
 
 .app {
   color: var(--primary-color);
+
   background-color: var(--bg-color);
+
   font: var(--font-m);
-  min-height: 100vh;
   transition: background-color ease 300ms, color ease 300ms;
+  min-height: 100vh;
 }
 
 .content-page {
@@ -17,5 +19,6 @@
 
 .page-wrapper {
   flex-grow: 1;
+
   padding: 20px;
 }

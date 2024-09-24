@@ -1,6 +1,10 @@
 {
   "About": "About",
   "Language": "Language",
+  "Main": "Main",
   "MainPage": "MainPage",
-  "test2": "test2"
+  "Page not found": "Page not found",
+  "Page not found2": "Page not found2",
+  "test2": "test2",
+  "toggle": "toggle"
 }

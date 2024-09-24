@@ -2,11 +2,11 @@ import cn from 'classnames';
 
 import './styles/index.scss';
 
-import { AppRouter } from './providers/ThemeProvider/router';
 import { Navbar } from 'widgets/Navbar';
 import { useTheme } from './providers/ThemeProvider';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
+import { AppRouter } from './providers/router';
 
 export const App = () => {
   const { theme } = useTheme();
