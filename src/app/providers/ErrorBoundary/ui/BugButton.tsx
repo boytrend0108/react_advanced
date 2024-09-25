@@ -1,5 +1,6 @@
 import cn from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   className?: string;
@@ -8,6 +9,7 @@ interface Props {
 export const BugButton: React.FC<Props> = (props) => {
   const { className, ...otherProps } = props;
   const [error, setError] = useState(false);
+  const { t } = useTranslation();
 
   function onThrow() {
     setError(true);
@@ -21,7 +23,7 @@ export const BugButton: React.FC<Props> = (props) => {
 
   return (
     <button className={cn('', className)} {...otherProps} onClick={onThrow}>
-      throw error
+      {t('throw error')}
     </button>
   );
 };
