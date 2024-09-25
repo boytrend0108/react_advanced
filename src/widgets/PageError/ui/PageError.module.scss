@@ -1,7 +1,7 @@
-.PageLoader {
-  height: calc(100vh - var(--navbar-height) - 40px);
-
+.PageError {
   display: flex;
+  height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }

@@ -11,7 +11,8 @@
         "defaultValue": "",
         "keyAsDefaultValue": true,
         "jsonIndent": 2,
-        "useI18nextDefaultValue": true
+        "useI18nextDefaultValue": true,
+        "fallbackNS": "translation"
       }
     ]
   ]

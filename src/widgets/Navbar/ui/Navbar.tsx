@@ -1,7 +1,8 @@
+import React, { useEffect } from 'react';
 import cn from 'classnames';
+
 import * as cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {
