@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // allows use import default
     "esModuleInterop": true, //allow module import instaed require()
-    "types": ["webpack", "jest", "node"],
+    "types": ["webpack", "jest", "node", "@testing-library/jest-dom"],
     "baseUrl": ".", // for absolute import
     "paths": {
       "*": ["./src/*"]
@@ -23,5 +23,9 @@
     }
   },
 
-  "include": ["src/**/*", "src/app/types/global.d.ts"]
+  "include": [
+    "src/**/*",
+    "src/app/types/global.d.ts",
+    "src/config/jest/setupTest.ts"
+  ]
 }
