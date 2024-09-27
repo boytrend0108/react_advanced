@@ -35,14 +35,10 @@ export default [
     },
   },
   {
-    overrides: [
-      {
-        files: ['**/*.test.{ts,tsx}'],
-        rules: {
-          'i18next/no-literal-string': 'off',
-          'i18next/valid-key': 'off',
-        },
-      },
-    ],
+    files: ['**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
+      'i18next/valid-key': 'off',
+    },
   },
 ];

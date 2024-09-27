@@ -39,3 +39,5 @@ yarn-error.log*
 
 # Coverage directory used by testing tools like istanbul
 coverage/
+
+*storybook.log

@@ -4,6 +4,7 @@ import { ButtonHTMLAttributes } from 'react';
 
 export enum ThemeButton {
   CLEAR = 'clear',
+  OUTLINED = 'outline',
 }
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,12 +14,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<Props> = (props) => {
-  const {
-    className,
-    children,
-    theme = ThemeButton.CLEAR,
-    ...otherProps
-  } = props;
+  const { className, children, theme, ...otherProps } = props;
 
   return (
     <button className={cn(cls.Button, className, cls[theme])} {...otherProps}>
