@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import * as cls from './ThemeSwitcher.module.scss';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider2';
 import LigthIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
+import { Theme } from 'app/providers/ThemeProvider2/lib/themeContext';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import React from 'react';
 

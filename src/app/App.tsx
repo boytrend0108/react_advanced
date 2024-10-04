@@ -3,7 +3,7 @@ import cn from 'classnames';
 import './styles/index.scss';
 
 import { Navbar } from 'widgets/Navbar';
-import { useTheme } from './providers/ThemeProvider';
+import { useTheme } from './providers/ThemeProvider2';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { AppRouter } from './providers/router';
