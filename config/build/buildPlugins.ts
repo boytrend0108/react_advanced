@@ -5,8 +5,12 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions, BuildPath } from "./types/config";
 
 // Your existing buildPlugins function
-export function buildPlugins(paths: BuildPath, options: BuildOptions, isDev: boolean): webpack.WebpackPluginInstance[] {
-  return [
+export function buildPlugins(
+  paths: BuildPath,
+  options: BuildOptions,
+  isDev: boolean
+): webpack.WebpackPluginInstance[] {
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -15,12 +19,13 @@ export function buildPlugins(paths: BuildPath, options: BuildOptions, isDev: boo
       filename: options.isDev ? "css/[name].css" : "css/[name].[contenthash:8].css",
       chunkFilename: options.isDev ? "css/[name].css" : "css/[name].[contenthash:8].css",
     }),
-    new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
+    new webpack.DefinePlugin({ __IS_DEV__: JSON.stringify(isDev) }),
   ];
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+
+  return plugins;
 }
