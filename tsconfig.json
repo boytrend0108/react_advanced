@@ -13,7 +13,9 @@
     "baseUrl": ".", // for absolute import
     "paths": {
       "*": ["./src/*"]
-    }
+    },
+
+    "forceConsistentCasingInFileNames": true
   },
 
   "ts-node": {
