@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import * as cls from './PageLoader.module.scss';
+import cls from './PageLoader.module.scss';
 import { Loader } from 'shared/ui/Loader/Loader';
 
 interface Props {

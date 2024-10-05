@@ -9,6 +9,7 @@ export function buildCssLoaders(isDev: boolean) {
         loader: "css-loader",
         options: {
           modules: {
+            namedExport: false, // important
             auto: (resourcePath: string) => resourcePath.includes('.module.'),
             localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
           },

@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import * as cls from './PageError.module.scss';
+import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
@@ -16,7 +16,7 @@ export const PageError: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className={cn(cls.PageError, className)} {...otherProps}>
+    <div className={cn(cls.pageError, className)} {...otherProps}>
       <h1>{t('Something went wrong')}</h1>
       <Button onClick={reloadPage}>{t('Restart')}</Button>
     </div>

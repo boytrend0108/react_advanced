@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import * as cls from './Sidebar.module.scss';
+import cls from './Sidebar.module.scss';
 import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -22,7 +22,7 @@ export const Sidebar: React.FC<Props> = (props) => {
   return (
     <div
       data-testid='sidebar'
-      className={cn(cls.Sidebar, { [cls.collapsed]: collapsed }, className)}
+      className={cn(cls.sidebar, { [cls.collapsed]: collapsed }, className)}
       {...otherProps}
     >
       <Button onClick={onToggle} data-testid='sidebar-toogle'>

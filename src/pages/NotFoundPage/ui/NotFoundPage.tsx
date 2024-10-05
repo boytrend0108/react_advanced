@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import * as cls from './NotFoundPage.module.scss';
+import cls from './NotFoundPage.module.scss';
 
 interface Props {
   className?: string;

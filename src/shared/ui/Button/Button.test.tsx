@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Button, ThemeButton } from './Button';
-import * as styles from './Button.module.scss';
+import styles from './Button.module.scss';
 
 describe('Button component', () => {
   test('renders button with some class', () => {
@@ -13,13 +13,13 @@ describe('Button component', () => {
     render(<Button className={customClass}>TEST</Button>);
     const button = screen.getByText('TEST');
     expect(button).toHaveClass(customClass);
-    expect(button).toHaveClass(styles.Button);
+    expect(button).toHaveClass(styles.button);
   });
 
   test('renders button with CLEAR theme', () => {
     render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
     const button = screen.getByText('TEST');
-    expect(button).toHaveClass(styles.Button);
+    expect(button).toHaveClass(styles.button);
     expect(button).toHaveClass(styles.clear);
   });
 
@@ -38,7 +38,7 @@ describe('Button component', () => {
     );
     const button = screen.getByText('TEST');
     expect(button.className).toBe(
-      `${styles.Button} ${customClass} ${styles.clear}`
+      `${styles.button} ${customClass} ${styles.clear}`
     );
   });
 });

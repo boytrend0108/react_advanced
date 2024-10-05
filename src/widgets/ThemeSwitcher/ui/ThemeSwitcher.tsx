@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import * as cls from './ThemeSwitcher.module.scss';
+import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from 'app/providers/ThemeProvider2';
 import LigthIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';

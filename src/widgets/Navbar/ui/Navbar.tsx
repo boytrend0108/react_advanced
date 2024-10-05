@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import cn from 'classnames';
 
-import * as cls from './Navbar.module.scss';
+import cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +13,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(cls.Navbar, className)}>
+    <div className={cn(cls.navbar, className, 'test')}>
       <div className={cls.links}>
         <AppLink theme={AppLinkTheme.SECONDARY} to='/' className={cls.mainLink}>
           {t('Main')}
