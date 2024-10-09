@@ -27,6 +27,6 @@
   "include": [
     "src/**/*",
     "src/app/types/global.d.ts",
-    "src/config/jest/setupTest.ts"
+    "config/jest/setupTest.ts"
   ]
 }

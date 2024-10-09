@@ -2,8 +2,6 @@ import { ButtonHTMLAttributes } from 'react';
 import cn from 'classnames';
 import cls from './Button.module.scss';
 
-console.log(cls);
-
 export enum ThemeButton {
   CLEAR = 'clear',
   OUTLINED = 'outline',

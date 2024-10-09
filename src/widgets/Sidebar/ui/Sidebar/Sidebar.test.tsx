@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import cls from './Sidebar.module.scss';
 import { Sidebar } from './Sidebar';
 import { renderWithTranslation } from 'shared/lib/renderWithTranslation/renderWithTranslation';
 
