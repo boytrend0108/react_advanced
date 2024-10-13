@@ -1,12 +1,13 @@
 {
   "About": "About",
+  "Home": "Home",
   "Language": "Ukrainian",
   "Main": "Main",
   "MainPage": "MainPage",
   "Page not found": "Page not found",
   "Restart": "Перезавантажити",
+  "ShortLang": "Ua",
   "Something went wrong": "Щось пішло не так..",
-  "hello55": "hello55",
   "throw error": "throw error",
   "toggle": "toggle"
 }

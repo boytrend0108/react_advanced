@@ -11,7 +11,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   i18next.configs['flat/recommended'],
-  { ignores: ['dist/*'] },
+  { ignores: ['dist/*', 'storybook-static/*'] },
   {
     rules: {
       'no-unused-vars': 'warn',

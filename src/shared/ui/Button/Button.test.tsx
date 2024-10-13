@@ -38,7 +38,7 @@ describe('Button component', () => {
     );
     const button = screen.getByText('TEST');
     expect(button.className).toBe(
-      `${styles.button} ${customClass} ${styles.clear}`
+      `${styles.button} ${customClass} ${styles.clear} sizeM`
     );
   });
 });

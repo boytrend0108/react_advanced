@@ -7,7 +7,6 @@ const MainPage = () => {
   return (
     <div className='MainPage'>
       <h1>{t('MainPage')}</h1>
-      <BugButton />
     </div>
   );
 };

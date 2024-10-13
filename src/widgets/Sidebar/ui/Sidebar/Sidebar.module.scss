@@ -6,16 +6,6 @@
   transition: width var(--transition-duration);
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-
-  display: block;
-
-  .switchers {
-    flex-direction: column;
-  }
-}
-
 .switchers {
   width: 100%;
 
@@ -25,12 +15,46 @@
   bottom: 20px;
 }
 
-.lang {
-  margin-left: 20px;
-}
-
 .collapsedBtn {
   position: absolute;
   bottom: 32px;
   right: -32px;
+}
+
+.items {
+  margin-top: 20px;
+  margin-left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  display: block;
+
+  .switchers {
+    flex-direction: column;
+
+    margin: 0;
+  }
+
+  .link {
+    opacity: 0;
+    transition: all ease var(--transition-duration);
+
+    width: 0;
+  }
 }

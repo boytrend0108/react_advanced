@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import cls from './Navbar.module.scss';
@@ -16,11 +16,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
     <div className={cn(cls.navbar, className, 'test')}>
       <div className={cls.links}>
         <AppLink theme={AppLinkTheme.SECONDARY} to='/' className={cls.mainLink}>
-          {t('Main')}
-        </AppLink>
-
-        <AppLink theme={AppLinkTheme.RED} to='/about'>
-          {t('About')}
+          {t('Home')}
         </AppLink>
       </div>
     </div>

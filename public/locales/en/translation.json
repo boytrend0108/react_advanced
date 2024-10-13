@@ -1,15 +1,13 @@
 {
   "About": "About",
-  "Language": "Language",
+  "Home": "Home",
+  "Language": "English",
   "Main": "Main",
-  "Main2": "Main2",
-  "Main29": "Main29",
-  "Main30": "Main30",
   "MainPage": "MainPage",
   "Page not found": "Page not found",
   "Restart": "Restart",
+  "ShortLang": "En",
   "Something went wrong": "Something went wrong",
-  "hello55": "hello55",
   "throw error": "throw error",
   "toggle": "toggle"
 }
