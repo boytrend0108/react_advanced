@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface Props {
   className?: string;
@@ -25,8 +25,15 @@ export const Sidebar: React.FC<Props> = (props) => {
       className={cn(cls.sidebar, { [cls.collapsed]: collapsed }, className)}
       {...otherProps}
     >
-      <Button onClick={onToggle} data-testid='sidebar-toogle'>
-        {t('toggle')}
+      <Button
+        onClick={onToggle}
+        data-testid='sidebar-toogle'
+        className={cls.collapsedBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        square
+        size={ButtonSize.L}
+      >
+        {collapsed ? '>' : '<'}
       </Button>
 
       <div className={cls.switchers}>

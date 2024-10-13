@@ -10,6 +10,10 @@
   width: var(--sidebar-width-collapsed);
 
   display: block;
+
+  .switchers {
+    flex-direction: column;
+  }
 }
 
 .switchers {
@@ -23,4 +27,10 @@
 
 .lang {
   margin-left: 20px;
+}
+
+.collapsedBtn {
+  position: absolute;
+  bottom: 32px;
+  right: -32px;
 }

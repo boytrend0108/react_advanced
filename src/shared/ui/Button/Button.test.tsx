@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonTheme } from './Button';
 import styles from './Button.module.scss';
 
 describe('Button component', () => {
   test('renders button with some class', () => {
-    render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
     expect(screen.getByText('TEST')).toBeInTheDocument();
   });
 
@@ -17,7 +17,7 @@ describe('Button component', () => {
   });
 
   test('renders button with CLEAR theme', () => {
-    render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
     const button = screen.getByText('TEST');
     expect(button).toHaveClass(styles.button);
     expect(button).toHaveClass(styles.clear);
@@ -32,7 +32,7 @@ describe('Button component', () => {
   test('applies classnames in the correct order', () => {
     const customClass = 'custom-class';
     render(
-      <Button className={customClass} theme={ThemeButton.CLEAR}>
+      <Button className={customClass} theme={ButtonTheme.CLEAR}>
         TEST
       </Button>
     );
