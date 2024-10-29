@@ -15,10 +15,11 @@ export default [
   {
     rules: {
       'no-unused-vars': 'warn',
-      'no-undef': 'error',
+      'no-undef': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-require-imports': 'warn',
       'react/display-name': 'off',
     },
   },

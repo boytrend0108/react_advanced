@@ -2,6 +2,8 @@
 node_modules/
 dist/
 storybook-static/
+.loki/report.html
+.loki/report.json
 
 # Local environment files
 .env.local
