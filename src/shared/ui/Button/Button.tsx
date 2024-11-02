@@ -33,9 +33,6 @@ export const Button: React.FC<Props> = (props) => {
     ...otherProps
   } = props;
 
-  console.log(size);
-  console.log(cls);
-
   const mods = {
     [cls[theme]]: true,
     [cls.square]: square,

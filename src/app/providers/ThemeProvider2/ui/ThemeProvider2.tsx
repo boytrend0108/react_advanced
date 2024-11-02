@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   Theme,
@@ -15,15 +15,15 @@ const defaultTheme =
 export const ThemeProvider2: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  function toogleTheme() {
+  const toogleTheme = useCallback(() => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
     setTheme(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-  }
+  }, [theme]);
 
   const defaultProps = useMemo(
     () => ({ theme, setTheme: toogleTheme }),
-    [theme]
+    [theme, toogleTheme]
   );
 
   return (
