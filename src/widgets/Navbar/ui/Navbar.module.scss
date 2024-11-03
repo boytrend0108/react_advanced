@@ -5,14 +5,10 @@
   padding: 20px;
 
   display: flex;
-
+  justify-content: flex-end;
   align-items: center;
 
   background-color: var(--inverted-bg-color);
-}
-
-.links {
-  margin-left: auto;
 }
 
 .mainLink {
