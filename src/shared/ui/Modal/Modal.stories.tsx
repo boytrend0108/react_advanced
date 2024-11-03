@@ -15,14 +15,16 @@ const meta = {
   args: {
     children: 'Lorem adfasd dfsdftn sdfkldf ',
     isOpen: true,
-    onClose() {},
+    onClose: () => {},
   },
 } satisfies Meta<typeof Modal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+};
 
 export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
