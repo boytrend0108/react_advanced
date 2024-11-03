@@ -1,16 +1,12 @@
 {
-  "About": "About",
+  "About": "О нас",
+  "Enter": "Bойти",
   "Home": "Home",
   "Language": "Ukrainian",
-  "Lorem ipsum, dolor sit amet consectetur adipisicing elit": {
-    "obcaecati labore odio possimus": {
-      " Similique, inventore libero placeat temporibus aperiam ducimus": {
-        "": ""
-      }
-    }
-  },
-  "Main": "Main",
-  "MainPage": "MainPage",
+  "Lorem": "Lorem",
+  "Lorem ipsum, dolor sit amet consectetur adipisicing elit": "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  "Main": "Головна",
+  "MainPage": "Головна страниця",
   "Page not found": "Page not found",
   "Restart": "Перезавантажити",
   "ShortLang": "Ua",

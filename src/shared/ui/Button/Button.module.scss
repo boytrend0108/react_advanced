@@ -9,10 +9,15 @@
   justify-content: center;
 }
 
-.clear {
+.clear,
+.clearInverted {
   background: none;
   border: none;
   color: var(--primary-color);
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
 }
 
 .outline {

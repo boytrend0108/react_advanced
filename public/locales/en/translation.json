@@ -1,14 +1,9 @@
 {
   "About": "About",
+  "Enter": "Enter",
   "Home": "Home",
-  "Language": "English",
-  "Lorem ipsum, dolor sit amet consectetur adipisicing elit": {
-    "obcaecati labore odio possimus": {
-      " Similique, inventore libero placeat temporibus aperiam ducimus": {
-        "": ""
-      }
-    }
-  },
+  "Lorem": "Lorem",
+  "Lorem ipsum, dolor sit amet consectetur adipisicing elit": "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
   "Main": "Main",
   "MainPage": "MainPage",
   "Page not found": "Page not found",
@@ -16,5 +11,6 @@
   "ShortLang": "En",
   "Something went wrong": "Something went wrong",
   "throw error": "throw error",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Войти": "Войти"
 }

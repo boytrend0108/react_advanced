@@ -1,10 +1,11 @@
 import cn from 'classnames';
 import cls from './Modal.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { Portal } from '../Portal/Portal';
 
 interface Props {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -52,18 +53,20 @@ export const Modal: React.FC<Props> = (props) => {
   }, [isOpen, onKeydown]);
 
   return (
-    <div
-      className={cn(cls.modal, className, {
-        [cls.open]: isOpen,
-        [cls.isClosing]: isClosing,
-      })}
-      {...otherProps}
-    >
-      <div className={cls.overlay} onClick={closeHandler}>
-        <div className={cls.content} onClick={onContentClick}>
-          {children}
+    <Portal>
+      <div
+        className={cn(cls.modal, className, {
+          [cls.open]: isOpen,
+          [cls.isClosing]: isClosing,
+        })}
+        {...otherProps}
+      >
+        <div className={cls.overlay} onClick={closeHandler}>
+          <div className={cls.content} onClick={onContentClick}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   );
 };
