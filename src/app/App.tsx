@@ -1,15 +1,15 @@
 import cn from 'classnames';
 
-import './styles/index.scss';
-
 import { Navbar } from 'widgets/Navbar';
 import { useTheme } from './providers/ThemeProvider2';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useState } from 'react';
 import { AppRouter } from './providers/router';
+import { useTranslation } from 'react-i18next';
 
 export const App = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Suspense>

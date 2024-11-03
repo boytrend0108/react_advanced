@@ -1,13 +1,14 @@
-@import './variables/global';
+@import './variables';
 @import './themes';
 @import './reset';
 
-.app {
-  color: var(--primary-color);
-
-  background-color: var(--bg-color);
-
+body {
   font: var(--font-m);
+  color: var(--primary-color);
+}
+
+.app {
+  background-color: var(--bg-color);
   transition: background-color ease 300ms, color ease 300ms;
   min-height: 100vh;
 }

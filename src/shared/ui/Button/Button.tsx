@@ -4,6 +4,7 @@ import cls from './Button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINED = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
@@ -32,9 +33,6 @@ export const Button: React.FC<Props> = (props) => {
     square,
     ...otherProps
   } = props;
-
-  console.log(size);
-  console.log(cls);
 
   const mods = {
     [cls[theme]]: true,
