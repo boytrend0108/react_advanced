@@ -37,7 +37,7 @@ const config: Config = {
   ],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
   moduleNameMapper: {
-    "^entities/(.*)$": "<rootDir>/src/entities/$1",
+    "^entitiess/(.*)$": "<rootDir>/src/entitiess/$1",
     "\\.module\\.scss$": "<rootDir>/config/jest/cssMock.ts",
     "\\.svg": path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
