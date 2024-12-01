@@ -1,6 +1,6 @@
-@import './variables';
-@import './themes';
-@import './reset';
+@use 'variables';
+@use 'themes';
+@use 'reset';
 
 body {
   font: var(--font-m);
