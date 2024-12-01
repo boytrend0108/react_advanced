@@ -11,6 +11,8 @@
   "Restart": "Перезавантажити",
   "ShortLang": "Ua",
   "Something went wrong": "Щось пішло не так..",
+  "decrement": "decrement",
+  "increment": "increment",
   "throw error": "throw error",
   "toggle": "toggle"
 }
