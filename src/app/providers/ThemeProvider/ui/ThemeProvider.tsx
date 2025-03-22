@@ -13,7 +13,7 @@ type Props = {
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-export const ThemeProvider2: React.FC<Props> = ({ children, initialTheme }) => {
+export const ThemeProvider: React.FC<Props> = ({ children, initialTheme }) => {
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
   const toogleTheme = useCallback(() => {

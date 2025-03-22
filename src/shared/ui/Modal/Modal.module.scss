@@ -36,6 +36,11 @@
     transform: scale(1);
     background-color: var(--bg-color);
   }
+
+  .content.dark {
+    background-color: var(--inverted-secondary-color);
+    color: var(--bg-color);
+  }
 }
 
 .isClosing {
