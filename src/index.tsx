@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './app/styles/index.scss';
 
 import { App } from 'app/App';
-import { ThemeProvider2 } from 'app/providers/ThemeProvider2';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
 
 import 'shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
@@ -15,11 +15,11 @@ const root = createRoot(document.getElementById('app'));
 root.render(
   <StoreProvider>
     <BrowserRouter>
-      <ThemeProvider2>
+      <ThemeProvider>
         <ErrorBoundary fallback={<PageError />}>
           <App />
         </ErrorBoundary>
-      </ThemeProvider2>
+      </ThemeProvider>
     </BrowserRouter>
   </StoreProvider>
 );
