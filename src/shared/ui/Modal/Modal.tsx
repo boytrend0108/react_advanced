@@ -3,6 +3,7 @@ import cls from './Modal.module.scss';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 
 interface Props {
   className?: string;
@@ -66,7 +67,7 @@ export const Modal: React.FC<Props> = (props) => {
         <div className={cls.overlay} onClick={closeHandler}>
           <div
             className={cn(cls.content, {
-              [cls.dark]: theme === 'dark',
+              [cls.dark]: theme === Theme.DARK,
             })}
             onClick={onContentClick}
           >
