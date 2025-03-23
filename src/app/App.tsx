@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 import { Navbar } from 'widgets/Navbar';
-import { useTheme } from './providers/ThemeProvider2';
+import { useTheme } from './providers/ThemeProvider';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useState } from 'react';
 import { AppRouter } from './providers/router';
