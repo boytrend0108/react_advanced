@@ -6,6 +6,8 @@ import { buildSvgLoader } from "./loaders/buildSvgLoader";
 
 type Rules = false | "" | 0 | webpack.RuleSetRule | "...";
 
+// The loaders allow to process files that are not js files (like ts, png, etc)
+
 export function buildLoaders(options: BuildOptions): Rules[] {
   const typeScriptLoader = {
     test: /\.tsx?$/,
