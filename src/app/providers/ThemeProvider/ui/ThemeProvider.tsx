@@ -18,7 +18,9 @@ export const ThemeProvider: React.FC<Props> = ({ children, initialTheme }) => {
 
   const toogleTheme = useCallback(() => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+
     setTheme(newTheme);
+    
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   }, [theme]);
 

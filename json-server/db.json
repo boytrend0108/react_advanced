@@ -28,6 +28,11 @@
       "id": 1,
       "username": "admin",
       "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "Vit",
+      "password": 12345
     }
   ],
   "profile": {
