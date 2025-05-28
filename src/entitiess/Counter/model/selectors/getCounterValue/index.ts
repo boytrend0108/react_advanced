@@ -1,1 +1,0 @@
-export { getCounterValue } from './getCounterValue'
