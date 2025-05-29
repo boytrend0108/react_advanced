@@ -41,7 +41,7 @@ export const Input: React.FC<Props> = memo((props) => {
       setIsFocused(true);
       ref.current.focus();
     }
-  }, []);
+  }, [autofocus]);
 
   function onBlur() {
     setIsFocused(false);
@@ -51,8 +51,9 @@ export const Input: React.FC<Props> = memo((props) => {
     setIsFocused(true);
   }
 
-  function onSelect(e: any) {
-    setCaretPosition(e.target.selectionStart || 0);
+  function onSelect(e: React.SyntheticEvent) {
+    const target = e.target as HTMLInputElement;
+    setCaretPosition(target.selectionStart || 0);
   }
 
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
