@@ -5,20 +5,26 @@ import { Portal } from '../Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<Props> = (props) => {
-  const { className, children, isOpen, onClose, ...otherProps } = props;
+  const { className, children, isOpen, onClose, lazy, ...otherProps } = props;
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timeRef = useRef<ReturnType<typeof setTimeout>>(null);
   const { theme } = useTheme();
+
+  useEffect(() => {
+    setIsMounted(isOpen);
+  }, [isOpen]);
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -54,6 +60,10 @@ export const Modal: React.FC<Props> = (props) => {
       window.removeEventListener('keydown', onKeydown);
     };
   }, [isOpen, onKeydown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

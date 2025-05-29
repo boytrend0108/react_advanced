@@ -17,7 +17,7 @@ export const LoginForm: React.FC<Props> = (props) => {
 
   return (
     <div className={cn(cls.loginForm)} {...otherProps}>
-      <Input value={login} onChange={setLogin} placeholder='login' />
+      <Input value={login} onChange={setLogin} placeholder='login' autofocus />
       <Input value={password} onChange={setPassword} placeholder='password' />
 
       <Button className={cls.loginBtn}>{t('Login')}</Button>

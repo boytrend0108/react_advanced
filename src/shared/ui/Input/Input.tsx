@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import cls from './Input.module.scss';
-import { memo, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { log } from 'console';
 
 type HTMLInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -13,6 +14,7 @@ interface Props extends HTMLInputProps {
   onChange?: (value: string) => void;
   value: string;
   placeholder?: string;
+  autofocus?: boolean;
   type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
 }
 
@@ -25,12 +27,21 @@ export const Input: React.FC<Props> = memo((props) => {
     onChange,
     value,
     placeholder,
+    autofocus,
     ...otherProps
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
   const [carretPosition, setCaretPosition] = useState(0);
   const { theme } = useTheme();
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (autofocus) {
+      setIsFocused(true);
+      ref.current.focus();
+    }
+  }, []);
 
   function onBlur() {
     setIsFocused(false);
@@ -57,6 +68,7 @@ export const Input: React.FC<Props> = memo((props) => {
 
       <div className={cls.carretWrapper}>
         <input
+          ref={ref}
           type={type}
           onChange={onChangeHandler}
           value={value}
@@ -64,6 +76,7 @@ export const Input: React.FC<Props> = memo((props) => {
           onBlur={onBlur}
           onFocus={onFocus}
           onSelect={onSelect}
+          {...otherProps}
         />
 
         {isFocused && (

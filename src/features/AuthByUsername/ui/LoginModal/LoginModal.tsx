@@ -18,6 +18,7 @@ export const LoginModal: React.FC<Props> = (props) => {
       {...otherProps}
       isOpen={isOpen}
       onClose={onClose}
+      lazy
     >
       <LoginForm />
     </Modal>
