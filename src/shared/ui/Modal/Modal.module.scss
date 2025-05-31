@@ -4,7 +4,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1;
-  color: var(--primary-color);
+  color: var(--inverted-primary-color);
 }
 
 .overlay {
@@ -22,9 +22,10 @@
 
   padding: 20px;
   border-radius: 12px;
-  background-color: var(--bg-color);
+  background-color: var(--inverted-bg-color);
   transform: scale(0.5);
   transition: transform ease var(--transition-duration);
+  color: var(--inverted-primary-color);
 }
 
 .open {
@@ -34,12 +35,11 @@
 
   .content {
     transform: scale(1);
-    background-color: var(--bg-color);
   }
 
   .content.dark {
-    background-color: var(--inverted-secondary-color);
-    color: var(--bg-color);
+    background-color: var(--bg-color);
+    color: var(--inverted-bg-color);
   }
 }
 
