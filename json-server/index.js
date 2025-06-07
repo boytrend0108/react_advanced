@@ -20,10 +20,13 @@ server.use(async (req, res, next) => {
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { authData } = req.body;
+    const { username, password } = authData;
+
     const db = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8')
     );
+
     const { users = [] } = db;
 
     const userFromBd = users.find(
@@ -42,7 +45,7 @@ server.post('/login', (req, res) => {
 });
 
 // проверяем, авторизован ли пользователь
- 
+
 server.use((req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' });

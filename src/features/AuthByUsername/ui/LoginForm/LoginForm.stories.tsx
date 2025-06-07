@@ -4,6 +4,11 @@ import { fn } from '@storybook/test';
 import { LoginForm } from './LoginForm';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Store } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { Trans, Translation } from 'react-i18next';
+import { TranslationDecorator } from 'shared/config/storybook/TranslationDecorator/TranslationDecorator';
 
 const meta = {
   title: 'features/LoginForm',
@@ -22,4 +27,57 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {},
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'test',
+        password: '1111',
+        isLoading: false,
+        error: '',
+      },
+    } as StateSchema),
+  ],
+};
+
+export const Error: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'test',
+        password: '1111',
+        isLoading: false,
+        error: 'some error',
+      },
+    } as StateSchema),
+  ],
+};
+
+export const Disalbed: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'test',
+        password: '1111',
+        isLoading: true,
+        error: '',
+      },
+    } as StateSchema),
+  ],
+};
+
+export const DisalbedDark: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: 'test',
+        password: '1111',
+        isLoading: true,
+        error: '',
+      },
+    } as StateSchema),
+    ThemeDecorator(Theme.DARK),
+  ],
 };

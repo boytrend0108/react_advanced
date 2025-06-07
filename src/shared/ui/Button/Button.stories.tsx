@@ -94,11 +94,11 @@ export const SquareL: Story = {
   },
 };
 
-export const SquareXL: Story = {
+export const Disabled: Story = {
   args: {
     theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true,
-    children: '>',
-    size: ButtonSize.XL,
+    children: 'Login',
+    size: ButtonSize.M,
+    disabled: true,
   },
 };

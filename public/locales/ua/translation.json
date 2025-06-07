@@ -1,9 +1,12 @@
 {
   "About": "О нас",
+  "Authorization form": "Форма авторизації",
   "Enter": "Bойти",
+  "Failed to fetch user by ID": "Failed to fetch user by ID",
   "Home": "Home",
   "Language": "Ukrainian",
-  "Login": "Login",
+  "Login": "Логін",
+  "Logout": "Вийти",
   "Lorem": "Lorem",
   "Lorem ipsho adfasdf  llkjn, fsdf;kdf ": "Lorem ipsho adfasdf  llkjn, fsdf;kdf ",
   "Lorem ipsum, dolor sit amet consectetur adipisicing elit": "Lorem ipsum, dolor sit amet consectetur adipisicing elit",

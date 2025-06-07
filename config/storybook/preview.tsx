@@ -1,7 +1,9 @@
 import type { Preview } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '../../src/app/providers/ThemeProvider/lib/themeContext';
 
 import 'app/styles/index.scss';
 
@@ -14,7 +16,12 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [StyleDecorator, RouterDecorator, StoreDecorator],
+  decorators: [
+    StyleDecorator,
+    RouterDecorator,
+    TranslationDecorator,
+    ThemeDecorator(Theme.LIGHT),
+  ],
 };
 
 export default preview;
