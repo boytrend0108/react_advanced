@@ -48,7 +48,9 @@ export const LoginForm: React.FC<Props> = (props) => {
   return (
     <div className={cn(cls.loginForm)} {...otherProps}>
       <Text title={t('Authorization form')} />
+
       {error && <Text theme={TextTheme.ERROR} text={error} />}
+
       <Input
         value={username}
         onChange={onChangeUsername}

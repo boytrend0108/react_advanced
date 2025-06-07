@@ -7,6 +7,8 @@ import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Store } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { Trans, Translation } from 'react-i18next';
+import { TranslationDecorator } from 'shared/config/storybook/TranslationDecorator/TranslationDecorator';
 
 const meta = {
   title: 'features/LoginForm',
