@@ -14,7 +14,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [StyleDecorator, RouterDecorator, StoreDecorator],
+  decorators: [StyleDecorator, RouterDecorator],
 };
 
 export default preview;

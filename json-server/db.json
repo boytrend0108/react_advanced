@@ -32,7 +32,7 @@
     {
       "id": 2,
       "username": "Vit",
-      "password": 12345
+      "password": "12345"
     }
   ],
   "profile": {

@@ -32,7 +32,7 @@ export const Input: React.FC<Props> = memo((props) => {
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
-  const [carretPosition, setCaretPosition] = useState(0);
+  const [caretPosition, setCaretPosition] = useState(value.length);
   const { theme } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
 
@@ -83,7 +83,7 @@ export const Input: React.FC<Props> = memo((props) => {
         {isFocused && (
           <span
             className={cls.carret}
-            style={{ left: `${carretPosition * SYMBOL_WIDTH}px` }}
+            style={{ left: `${caretPosition * SYMBOL_WIDTH}px` }}
           />
         )}
       </div>

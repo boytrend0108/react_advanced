@@ -4,11 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from 'app/providers/StoreProvider/store.hooks';
+import { log } from 'console';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface Props {
   className?: string;
@@ -17,7 +22,9 @@ interface Props {
 export const LoginForm: React.FC<Props> = (props) => {
   const { className, ...otherProps } = props;
   const { t } = useTranslation();
-  const { username, password } = useSelector(getLoginState);
+  const { username, password, isLoading, error } =
+    useAppSelector(getLoginState);
+
   const dispatch = useAppDispatch();
 
   const onChangeUsername = useCallback(
@@ -36,10 +43,12 @@ export const LoginForm: React.FC<Props> = (props) => {
 
   const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+  }, [username, password, dispatch]);
 
   return (
     <div className={cn(cls.loginForm)} {...otherProps}>
+      <Text title={t('Authorization form')} />
+      {error && <Text theme={TextTheme.ERROR} text={error} />}
       <Input
         value={username}
         onChange={onChangeUsername}
@@ -57,6 +66,7 @@ export const LoginForm: React.FC<Props> = (props) => {
         className={cls.loginBtn}
         theme={ButtonTheme.CLEAR_INVERTED}
         onClick={onLoginClick}
+        disabled={!username || !password || isLoading}
       >
         {t('Login')}
       </Button>
