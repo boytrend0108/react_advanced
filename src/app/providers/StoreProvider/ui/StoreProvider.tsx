@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { createReduxStore } from '../config/store';
-import { StateSchema } from '../config/stateSchema';
+import type { StateSchema } from '../config/stateSchema';
 
 interface Props {
   children: React.ReactNode;
