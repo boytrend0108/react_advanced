@@ -4,7 +4,7 @@ import { Navbar } from './Navbar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider/config/stateSchema';
 
 const meta = {
   title: 'widget/Navbar',
