@@ -13,6 +13,12 @@
   --sidebar-width-collapsed: 80px;
   --navbar-height: 50px;
   --transition-duration: 0.3s;
-  --modal-overlay-bg: rgb(0 0 0 / 63.7%);
+
+  // Z-index variables
   --modal-z-index: 10;
+
+  // Color variables
+  --modal-overlay-bg: #000000a2;
+  --red-light: #f20b0b;
+  --red-dark: #980808;
 }
