@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
