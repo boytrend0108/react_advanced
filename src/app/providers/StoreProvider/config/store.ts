@@ -1,21 +1,29 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { StateSchema } from './StateSchema';
+import { Action, configureStore, ReducersMapObject, ThunkAction } from '@reduxjs/toolkit';
+import { ReducerManager, StoreWithManager, StateSchema } from './StateSchema';
 import { counterReducer } from 'entitie/Counter';
 import { userReducer } from 'entitie/User';
-import { loginReducer } from 'features/AuthByUsername';
 
-export function createReduxStore(initialState?: StateSchema) {
+import { createReducerManager } from './reducerManager';
+
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
-    loginForm: loginReducer,
   };
 
-  return configureStore<StateSchema>({
-    reducer: rootReducer,
+  const reducerManager = createReducerManager(rootReducer);
+
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-  })
+  });
+
+  // @ts-expect-error we need to extend the store with our custom reducer manager
+  store.reducerManager = reducerManager;
+
+  return store;
 }
 
 
