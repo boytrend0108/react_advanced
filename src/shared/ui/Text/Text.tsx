@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 import cls from './Text.module.scss';
 
 export enum TextTheme {

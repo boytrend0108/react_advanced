@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack';
+import webpack from 'webpack';
 import { BuildPath } from '../build/types/config';
 import path from 'path';
 import { buildCssLoaders } from '../build/loaders/buildCssLoader';

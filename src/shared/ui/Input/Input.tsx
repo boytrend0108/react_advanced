@@ -2,7 +2,6 @@ import cn from 'classnames';
 import cls from './Input.module.scss';
 import { memo, useEffect, useRef, useState } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { log } from 'console';
 
 type HTMLInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,

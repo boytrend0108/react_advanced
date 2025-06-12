@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface Props {

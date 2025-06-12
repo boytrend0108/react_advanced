@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
@@ -12,7 +11,6 @@ import {
   useAppDispatch,
   useAppSelector,
 } from 'app/providers/StoreProvider/store.hooks';
-import { log } from 'console';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface Props {
