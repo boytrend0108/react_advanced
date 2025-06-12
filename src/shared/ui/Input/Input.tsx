@@ -31,7 +31,7 @@ export const Input: React.FC<Props> = memo((props) => {
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
-  const [caretPosition, setCaretPosition] = useState(value.length);
+  const [caretPosition, setCaretPosition] = useState(value?.length);
   const { theme } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
 
@@ -57,7 +57,7 @@ export const Input: React.FC<Props> = memo((props) => {
 
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     onChange(e.target.value);
-    setCaretPosition(e.target.value.length);
+    setCaretPosition(e.target.value?.length);
   }
 
   return (
