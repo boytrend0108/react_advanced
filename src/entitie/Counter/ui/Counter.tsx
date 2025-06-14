@@ -37,3 +37,5 @@ export const Counter: React.FC<Props> = (props) => {
     </div>
   );
 };
+
+Counter.whyDidYouRender = true;
