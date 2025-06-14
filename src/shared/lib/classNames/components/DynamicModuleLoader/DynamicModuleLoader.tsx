@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import { useAppDispatch } from 'app/providers/StoreProvider/store.hooks';
 import { useStore } from 'react-redux';
 import { StoreWithManager } from 'app/providers/StoreProvider';

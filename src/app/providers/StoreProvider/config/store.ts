@@ -1,5 +1,5 @@
-import { Action, configureStore, ReducersMapObject, ThunkAction } from '@reduxjs/toolkit';
-import { ReducerManager, StoreWithManager, StateSchema } from './StateSchema';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { StateSchema } from './StateSchema';
 import { counterReducer } from 'entitie/Counter';
 import { userReducer } from 'entitie/User';
 
