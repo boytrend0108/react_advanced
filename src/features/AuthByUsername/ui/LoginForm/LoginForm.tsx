@@ -67,7 +67,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
 
   return (
     <DynamicModuleLoader
-      removeAfterUnmounts
+      removeAfterUnmount
       reducers={initialReducers}
       name='loginForm'
     >
