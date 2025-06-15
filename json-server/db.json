@@ -38,6 +38,9 @@
   "profile": {
     "name": "Vit",
     "surname": "Boytrend",
+    "currency": "USD",
+    "country": "Ukraine",
+    "city": "Kyiv",
     "age": 30,
     "email": "boytrend@gmail.com",
     "avatar": "https://www.shutterstock.com/shutterstock/photos/1988351507/display_1500/stock-vector-hacker-avatar-with-laptop-isolated-1988351507.jpg"
