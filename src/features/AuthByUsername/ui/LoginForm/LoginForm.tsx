@@ -25,6 +25,7 @@ import {
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -32,7 +33,7 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm: React.FC<LoginFormProps> = memo((props) => {
-  const { className, ...otherProps } = props;
+  const { className, onSuccess, ...otherProps } = props;
   const { t } = useTranslation();
   const username = useAppSelector(getLoginUsername);
   const password = useAppSelector(getLoginPassword);
@@ -55,13 +56,18 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
     [dispatch]
   );
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [username, password, dispatch]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      dispatch(loginActions.setUserPassword(''));
+      dispatch(loginActions.setUserName(''));
+      onSuccess();
+    }
+  }, [username, password, dispatch, onSuccess]);
 
   return (
     <DynamicModuleLoader
-      removeAfterUnmount
+      removeAfterUnmounts
       reducers={initialReducers}
       name='loginForm'
     >
