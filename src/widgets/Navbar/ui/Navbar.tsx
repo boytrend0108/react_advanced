@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import cn from 'classnames';
 
 import cls from './Navbar.module.scss';
@@ -15,7 +15,7 @@ interface Props {
   className?: string;
 }
 
-export const Navbar: React.FC<Props> = ({ className }) => {
+export const Navbar: React.FC<Props> = memo(({ className }) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const user = useAppSelector(getUserAuthData);
@@ -58,4 +58,4 @@ export const Navbar: React.FC<Props> = ({ className }) => {
       )}
     </div>
   );
-};
+});
