@@ -14,13 +14,13 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 const root = createRoot(document.getElementById('app'));
 
 root.render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ThemeProvider>
         <ErrorBoundary fallback={<PageError />}>
           <App />
         </ErrorBoundary>
       </ThemeProvider>
-    </BrowserRouter>
-  </StoreProvider>
+    </StoreProvider>
+  </BrowserRouter>
 );

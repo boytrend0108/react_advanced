@@ -8,7 +8,8 @@ import { BuildOptions, BuildPath } from "./types/config";
 export function buildPlugins(
   paths: BuildPath,
   options: BuildOptions,
-  isDev: boolean
+  isDev: boolean,
+  apiUrl: string,
 ): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -19,7 +20,10 @@ export function buildPlugins(
       filename: options.isDev ? "css/[name].css" : "css/[name].[contenthash:8].css",
       chunkFilename: options.isDev ? "css/[name].css" : "css/[name].[contenthash:8].css",
     }),
-    new webpack.DefinePlugin({ __IS_DEV__: JSON.stringify(isDev) }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
+    }),
   ];
 
   if (isDev) {
