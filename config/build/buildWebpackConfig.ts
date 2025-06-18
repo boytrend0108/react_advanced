@@ -7,7 +7,7 @@ import { buildDevServer } from "./buildDevServer";
 
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const { mode, paths, isDev } = options;
+  const { mode, paths, isDev, apiUrl } = options;
 
   return {
     mode,
@@ -18,7 +18,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       clean: true, //delete old files
     },
 
-    plugins: buildPlugins(paths, options, isDev),
+    plugins: buildPlugins(paths, options, isDev, apiUrl),
 
     module: {
       // rules configure loaders (loaders handle not-js files (.ts, .png etc))

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { loginByUsername } from './loginByUsername';
 import { User, userActions } from 'entitie/User';
+import { Dispatch } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk/testAsyncThunk';
 
 jest.mock('axios');
@@ -17,35 +19,38 @@ describe('loginByUsername', () => {
     data: response,
   })
 
-  // let dispatch: Dispatch;
-  // let getSTate: () => StateSchema;
+  let dispatch: Dispatch;
+  let getState: () => StateSchema;
+  let api: typeof mockedAxios;
+  let navigate: jest.Mock;
 
-  // beforeEach(() => {
-  //   dispatch = jest.fn();
-  //   getSTate = jest.fn();
-  // });
+  beforeEach(() => {
+    dispatch = jest.fn();
+    getState = jest.fn();
+    api = mockedAxios;
+    navigate = jest.fn();
+  });
 
-  // const userValue = { username: 'testuser', password: '1111' }
+  const userValue = { username: 'testuser', password: '1111' }
 
   // it('success login', async () => {
   //   const action = loginByUsername(userValue);
-  //   const result = await action(dispatch, getSTate, undefined);
+  //   const result = await action(dispatch, getState, { api: api as AxiosInstance, navigate });
 
-  //   expect(axios.post).toHaveBeenCalled()
+  //   expect(mockedAxios.post).toHaveBeenCalled()
   //   expect(result.meta.requestStatus).toBe('fulfilled');
 
   //   expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(result.payload as User));
   //   expect(dispatch).toHaveBeenCalledTimes(3);
   //   expect(localStorage.getItem('user')).toBe(JSON.stringify(result.payload));
   //   expect(result.payload).toEqual(response);
-
   // });
 
 
   // it('error login', async () => {
   //   mockedAxios.post = jest.fn().mockResolvedValue({ status: 403 })
   //   const action = loginByUsername(userValue);
-  //   const result = await action(dispatch, getSTate, undefined);
+  //   const result = await action(dispatch, getState, { api: api as AxiosInstance, navigate });
 
   //   expect(axios.post).toHaveBeenCalled()
   //   expect(result.meta.requestStatus).toBe('rejected');
@@ -54,9 +59,6 @@ describe('loginByUsername', () => {
   //   expect(result.payload).toEqual('Failed to fetch user by ID');
   // });
 
-
-
-  const userValue = { username: 'testuser', password: '1111' }
 
   it('success login', async () => {
     const thunk = new TestAsyncThunk(loginByUsername);

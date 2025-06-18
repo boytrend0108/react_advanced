@@ -48,6 +48,7 @@ export default [
     languageOptions: {
       globals: {
         __IS_DEV__: 'writable',
+        __API__: 'writable',
         __dirname: 'writable',
         React: 'readonly',
         describe: 'readonly',
