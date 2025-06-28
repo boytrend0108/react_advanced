@@ -16,6 +16,6 @@ describe('getLoginError.unit', () => {
     const mockState = {
 
     } as StateSchema;
-    expect(getLoginError(mockState)).toEqual(undefined);
+    expect(getLoginError(mockState)).toEqual("");
   })
 })

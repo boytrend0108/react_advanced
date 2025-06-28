@@ -6,7 +6,7 @@ const initialState: LoginSchema = {
   username: '',
   password: '',
   isLoading: false,
-  error: undefined,
+  error: null,
 }
 
 export const loginSlice = createSlice({

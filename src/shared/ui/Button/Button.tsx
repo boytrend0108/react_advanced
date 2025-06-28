@@ -29,7 +29,7 @@ export const Button: React.FC<Props> = memo((props) => {
   const {
     className,
     children,
-    theme,
+    theme = ButtonTheme.OUTLINED,
     size = ButtonSize.M,
     square,
     disabled = false,
