@@ -23,7 +23,7 @@ export interface StoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
-  reduce: (state: StateSchema, action: Action) => StateSchema;
+  reduce: (state: StateSchema | undefined, action: Action) => StateSchema;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 };

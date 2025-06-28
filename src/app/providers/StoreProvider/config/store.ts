@@ -1,5 +1,5 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { StateSchema } from './StateSchema';
+import { configureStore, ReducersMapObject, ThunkAction, Action } from '@reduxjs/toolkit';
+import { StateSchema, ThunkExtraArg } from './stateSchema';
 import { counterReducer } from 'entitie/Counter';
 import { userReducer } from 'entitie/User';
 
@@ -20,18 +20,19 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<StateSchema>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: {
-          api: $api,
-          navigate,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+            navigate,
+          } as ThunkExtraArg
         }
-      }
-    }),
+      }),
   });
 
   // @ts-expect-error we need to extend the store with our custom reducer manager
@@ -44,3 +45,9 @@ export function createReduxStore(
 const store = createReduxStore();
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  ThunkExtraArg,
+  Action<string>
+>

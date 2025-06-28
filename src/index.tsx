@@ -11,7 +11,9 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
-const root = createRoot(document.getElementById('app'));
+const container = document.getElementById('app');
+if (!container) throw new Error('Root container not found');
+const root = createRoot(container);
 
 root.render(
   <BrowserRouter>

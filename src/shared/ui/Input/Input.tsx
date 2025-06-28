@@ -38,7 +38,7 @@ export const Input: React.FC<Props> = memo((props) => {
   useEffect(() => {
     if (autofocus) {
       setIsFocused(true);
-      ref.current.focus();
+      ref.current?.focus();
     }
   }, [autofocus]);
 
@@ -56,14 +56,14 @@ export const Input: React.FC<Props> = memo((props) => {
   }
 
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    onChange(e.target.value);
+    onChange?.(e.target.value);
     setCaretPosition(e.target.value?.length);
   }
 
   return (
     <div className={cn(cls.inputWrapper, className, theme)} {...otherProps}>
       {placeholder && (
-        <label className={cls.label}>{props.placeholder + '>'}</label>
+        <label className={cls.label}>{props.placeholder + ' >'}</label>
       )}
 
       <div className={cls.carretWrapper}>

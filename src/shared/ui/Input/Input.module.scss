@@ -8,11 +8,17 @@
   border: none;
   background-color: transparent;
   color: transparent;
-  text-shadow: 0 0 0 var(--inverted-primary-color);
+  text-shadow: 0 0 0 var(--primary-color);
 }
 
 input.dark {
   text-shadow: 0 0 0 var(-inverted-bg-color);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .carretWrapper {
