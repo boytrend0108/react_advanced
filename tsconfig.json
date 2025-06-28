@@ -11,6 +11,7 @@
     "esModuleInterop": true, //allow module import instaed require()
     "types": ["webpack", "jest", "node", "@testing-library/jest-dom"],
     "baseUrl": ".", // for absolute import
+    "strict": true,
     "paths": {
       "*": ["./src/*"]
     },

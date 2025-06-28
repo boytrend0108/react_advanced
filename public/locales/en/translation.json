@@ -1,9 +1,23 @@
 {
   "About": "About",
   "Authorization form": "Authorization form",
+  "Edit Profile": "Edit Profile",
   "Enter": "Enter",
+  "Enter your name": "Enter your name",
+  "Enter your surname": "Enter your surname",
+  "Error:": "Error:",
+  "Error:)": "Error:)",
+  "Failed to fetch a profile cart": "Failed to fetch a profile cart",
+  "Failed to fetch profile data": "Failed to fetch profile data",
   "Failed to fetch user by ID": "Failed to fetch user by ID",
   "Home": "Home",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Login": "Login",
   "Logout": "Logout",
   "Lorem": "Lorem",
@@ -12,6 +26,7 @@
   "Main": "Main",
   "MainPage": "MainPage",
   "Page not found": "Page not found",
+  "Profile": "Profile",
   "ProfilePage": "ProfilePage",
   "Restart": "Restart",
   "ShortLang": "En",

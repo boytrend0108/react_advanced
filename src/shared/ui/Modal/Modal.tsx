@@ -8,8 +8,8 @@ import { Theme } from 'app/providers/ThemeProvider/lib/themeContext';
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
   lazy?: boolean;
 }
 
@@ -19,11 +19,11 @@ export const Modal: React.FC<Props> = (props) => {
   const { className, children, isOpen, onClose, lazy, ...otherProps } = props;
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const timeRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const timeRef = useRef<NodeJS.Timeout | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
-    setIsMounted(isOpen);
+    setIsMounted(isOpen || false);
   }, [isOpen]);
 
   const closeHandler = useCallback(() => {
@@ -56,7 +56,7 @@ export const Modal: React.FC<Props> = (props) => {
     }
 
     return () => {
-      clearTimeout(timeRef.current);
+      if (timeRef.current) clearTimeout(timeRef.current);
       window.removeEventListener('keydown', onKeydown);
     };
   }, [isOpen, onKeydown]);

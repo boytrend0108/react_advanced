@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginIsLoading } from './getLoginIsLoading'
 
-describe('getLoginError.unit', () => {
+describe('getLoginIsLoading.unit', () => {
   const mockState = {
     loginForm: {
       isLoading: true,
@@ -16,6 +16,7 @@ describe('getLoginError.unit', () => {
     const mockState = {
 
     } as StateSchema;
-    expect(getLoginIsLoading(mockState)).toEqual(undefined);
+
+    expect(getLoginIsLoading(mockState)).toEqual(false);
   })
 })

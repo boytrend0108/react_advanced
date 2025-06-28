@@ -6,11 +6,18 @@ export enum TextTheme {
   ERROR = 'error',
 }
 
+export enum TextAlign {
+  LEFT = 'left',
+  CENTER = 'center',
+  RIGHT = 'right',
+}
+
 interface Props {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
+  align?: TextAlign;
 }
 
 export const Text: React.FC<Props> = (props) => {
@@ -18,13 +25,14 @@ export const Text: React.FC<Props> = (props) => {
     text,
     title,
     className,
+    align = TextAlign.LEFT,
     theme = TextTheme.PRIMARY,
     ...otherProps
   } = props;
 
   return (
     <div
-      className={cn(cls.Text, className, {
+      className={cn(cls.Text, cls[align], className, {
         [cls[theme]]: true,
       })}
       {...otherProps}
