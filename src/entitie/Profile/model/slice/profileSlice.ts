@@ -61,6 +61,7 @@ export const profileSlice = createSlice({
       state.error = null;
       state.data = action.payload;
       state.form = action.payload; // Assuming you want to keep the form in sync with the fetched data
+      state.readonly = true; // Set readonly to true after update
     })
     builder.addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false;

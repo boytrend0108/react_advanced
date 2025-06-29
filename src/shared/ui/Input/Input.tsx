@@ -28,7 +28,7 @@ export const Input: React.FC<Props> = memo((props) => {
     value = '',
     placeholder,
     autofocus,
-    readonly = true,
+    readonly = false,
     ...otherProps
   } = props;
 

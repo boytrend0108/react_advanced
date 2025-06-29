@@ -12,9 +12,10 @@ export const NotFoundPage: React.FC<Props> = (props) => {
   const { className, ...otherProps } = props;
 
   return (
-    <div className={cn(cls.NotFoundPage, className)} {...otherProps}>
+    <div className={cn(cls.notFoundPage, className)} {...otherProps}>
       <h1>{t('Page not found', { ns: 'not_found' })}</h1>
-      <h1>{t('Page not found22', { ns: 'not_found' })}</h1>
     </div>
   );
 };
+
+NotFoundPage.displayName = 'NotFoundPage';
