@@ -5,19 +5,20 @@ import {
 import cn from 'classnames';
 import {
   fetchProfileData,
-  getProfileData,
   getProfileError,
   getProfileIsLoading,
+  profileActions,
   ProfileCard,
   profileReducer,
+  updateProfileData,
 } from 'entitie/Profile';
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCallback, useEffect } from 'react';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/classNames/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfilePageHeader } from './components/ProfilePageHeader/ProfilePageHeader';
+import { getProfileForm } from 'entitie/Profile/model/selectors/getProfileForm/getProfileForm';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -29,9 +30,8 @@ interface Props {
 
 const ProfilePage: React.FC<Props> = (props) => {
   const { className, ...otherProps } = props;
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const data = useAppSelector(getProfileData);
+  const form = useAppSelector(getProfileForm);
   const isLoading = useAppSelector(getProfileIsLoading);
   const error = useAppSelector(getProfileError);
 
@@ -39,12 +39,36 @@ const ProfilePage: React.FC<Props> = (props) => {
     dispatch(fetchProfileData());
   }, [dispatch]);
 
+  const onProfileNameChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateForm({ name: value }));
+    },
+    [dispatch]
+  );
+
+  const onProfileSurnameChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateForm({ surname: value }));
+    },
+    [dispatch]
+  );
+
+  const onProfileSave = useCallback(() => {
+    dispatch(updateProfileData());
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={cn('', className)} {...otherProps}>
-        <ProfilePageHeader />
+        <ProfilePageHeader onProfileSave={onProfileSave} />
 
-        <ProfileCard data={data} isLoading={isLoading} error={error} />
+        <ProfileCard
+          data={form}
+          isLoading={isLoading}
+          error={error}
+          onProfileNameChange={onProfileNameChange}
+          onProfileSurnameChange={onProfileSurnameChange}
+        />
       </div>
     </DynamicModuleLoader>
   );

@@ -5,7 +5,7 @@ import { useTheme } from 'app/providers/ThemeProvider';
 
 type HTMLInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange'
+  'onChange' | 'readOnly'
 >;
 
 interface Props extends HTMLInputProps {
@@ -14,6 +14,7 @@ interface Props extends HTMLInputProps {
   value: string;
   placeholder?: string;
   autofocus?: boolean;
+  readOnly?: boolean;
   type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
 }
 
@@ -27,6 +28,7 @@ export const Input: React.FC<Props> = memo((props) => {
     value,
     placeholder,
     autofocus,
+    readOnly = true,
     ...otherProps
   } = props;
 
@@ -34,6 +36,8 @@ export const Input: React.FC<Props> = memo((props) => {
   const [caretPosition, setCaretPosition] = useState(value?.length);
   const { theme } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
+
+  const ifCarerVisible = isFocused && !readOnly;
 
   useEffect(() => {
     if (autofocus) {
@@ -61,7 +65,12 @@ export const Input: React.FC<Props> = memo((props) => {
   }
 
   return (
-    <div className={cn(cls.inputWrapper, className, theme)} {...otherProps}>
+    <div
+      className={cn(cls.inputWrapper, className, theme, {
+        [cls.readOnly]: readOnly,
+      })}
+      {...otherProps}
+    >
       {placeholder && (
         <label className={cls.label}>{props.placeholder + ' >'}</label>
       )}
@@ -76,12 +85,15 @@ export const Input: React.FC<Props> = memo((props) => {
           onBlur={onBlur}
           onFocus={onFocus}
           onSelect={onSelect}
+          readOnly={readOnly}
           {...otherProps}
         />
 
-        {isFocused && (
+        {ifCarerVisible && (
           <span
-            className={cls.carret}
+            className={cn(cls.carret, {
+              [cls.readOnly]: readOnly,
+            })}
             style={{ left: `${caretPosition * SYMBOL_WIDTH}px` }}
           />
         )}

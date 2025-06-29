@@ -1,6 +1,7 @@
 {
   "About": "About",
   "Authorization form": "Authorization form",
+  "Cancel": "Cancel",
   "Edit Profile": "Edit Profile",
   "Enter": "Enter",
   "Enter your name": "Enter your name",
@@ -10,6 +11,7 @@
   "Failed to fetch a profile cart": "Failed to fetch a profile cart",
   "Failed to fetch profile data": "Failed to fetch profile data",
   "Failed to fetch user by ID": "Failed to fetch user by ID",
+  "Failed to update profile data": "Failed to update profile data",
   "Home": "Home",
   "Loading": {
     "": {
@@ -29,6 +31,7 @@
   "Profile": "Profile",
   "ProfilePage": "ProfilePage",
   "Restart": "Restart",
+  "Save": "Save",
   "ShortLang": "En",
   "Something went wrong": "Something went wrong",
   "decrement": "decrement",
