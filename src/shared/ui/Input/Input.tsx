@@ -5,15 +5,16 @@ import { useTheme } from 'app/providers/ThemeProvider';
 
 type HTMLInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange'
+  'onChange' | 'readonly'
 >;
 
 interface Props extends HTMLInputProps {
   className?: string;
   onChange?: (value: string) => void;
-  value: string;
+  value: string | number;
   placeholder?: string;
   autofocus?: boolean;
+  readonly?: boolean;
   type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url';
 }
 
@@ -24,16 +25,19 @@ export const Input: React.FC<Props> = memo((props) => {
     className,
     type = 'text',
     onChange,
-    value,
+    value = '',
     placeholder,
     autofocus,
+    readonly = false,
     ...otherProps
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
-  const [caretPosition, setCaretPosition] = useState(value?.length);
+  const [caretPosition, setCaretPosition] = useState(value?.toString().length);
   const { theme } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
+
+  const ifCarerVisible = isFocused && !readonly;
 
   useEffect(() => {
     if (autofocus) {
@@ -61,7 +65,12 @@ export const Input: React.FC<Props> = memo((props) => {
   }
 
   return (
-    <div className={cn(cls.inputWrapper, className, theme)} {...otherProps}>
+    <div
+      className={cn(cls.inputWrapper, className, theme, {
+        [cls.readonly]: readonly,
+      })}
+      {...otherProps}
+    >
       {placeholder && (
         <label className={cls.label}>{props.placeholder + ' >'}</label>
       )}
@@ -76,12 +85,15 @@ export const Input: React.FC<Props> = memo((props) => {
           onBlur={onBlur}
           onFocus={onFocus}
           onSelect={onSelect}
+          readOnly={readonly}
           {...otherProps}
         />
 
-        {isFocused && (
+        {ifCarerVisible && (
           <span
-            className={cls.carret}
+            className={cn(cls.carret, {
+              [cls.readonly]: readonly,
+            })}
             style={{ left: `${caretPosition * SYMBOL_WIDTH}px` }}
           />
         )}

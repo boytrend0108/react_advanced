@@ -1,14 +1,27 @@
 {
   "About": "О нас",
   "Authorization form": "Форма авторизації",
+  "Cancel": "Cancel",
   "Edit Profile": "Edit Profile",
   "Enter": "Bойти",
+  "Enter an avatar link": "Enter an avatar link",
   "Enter your name": "Enter your name",
   "Enter your surname": "Enter your surname",
+  "Error:": "Error:",
+  "Error:)": "Error:)",
+  "Failed to fetch a profile cart": "Failed to fetch a profile cart",
   "Failed to fetch profile data": "Failed to fetch profile data",
   "Failed to fetch user by ID": "Failed to fetch user by ID",
+  "Failed to update profile data": "Failed to update profile data",
   "Home": "Home",
   "Language": "Ukrainian",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Login": "Логін",
   "Logout": "Вийти",
   "Lorem": "Lorem",
@@ -20,10 +33,17 @@
   "Profile": "Profile",
   "ProfilePage": "ProfilePage",
   "Restart": "Перезавантажити",
+  "Save": "Save",
+  "Select currency": "Select currency",
   "ShortLang": "Ua",
   "Something went wrong": "Щось пішло не так..",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Ваш возраст": "Ваш возраст",
+  "Введите имя пользователя": "Введите имя пользователя",
+  "Введите ссылку на аватар": "Введите ссылку на аватар",
+  "Город": "Город",
+  "Укажите страну": "Укажите страну"
 }
