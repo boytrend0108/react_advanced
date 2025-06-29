@@ -4,6 +4,7 @@
   "Cancel": "Cancel",
   "Edit Profile": "Edit Profile",
   "Enter": "Enter",
+  "Enter an avatar link": "Enter an avatar link",
   "Enter your name": "Enter your name",
   "Enter your surname": "Enter your surname",
   "Error:": "Error:",
@@ -32,11 +33,17 @@
   "ProfilePage": "ProfilePage",
   "Restart": "Restart",
   "Save": "Save",
+  "Select currency": "Select currency",
   "ShortLang": "En",
   "Something went wrong": "Something went wrong",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
   "toggle": "toggle",
-  "Войти": "Войти"
+  "Ваш возраст": "Ваш возраст",
+  "Введите имя пользователя": "Введите имя пользователя",
+  "Введите ссылку на аватар": "Введите ссылку на аватар",
+  "Войти": "Войти",
+  "Город": "Город",
+  "Укажите страну": "Укажите страну"
 }

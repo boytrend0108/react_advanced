@@ -12,6 +12,8 @@ import {
   profileReducer,
   updateProfileData,
 } from 'entitie/Profile';
+import { Currency } from 'entitie/Currency';
+import { Country } from 'entitie/Country';
 import { useCallback, useEffect } from 'react';
 import {
   DynamicModuleLoader,
@@ -53,6 +55,48 @@ const ProfilePage: React.FC<Props> = (props) => {
     [dispatch]
   );
 
+  const onChangeAge = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateForm({ age: Number(value) || 0 }));
+    },
+    [dispatch]
+  );
+
+  const onChangeCity = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateForm({ city: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const onChangeUsername = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateForm({ username: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const onChangeAvatar = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateForm({ avatar: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const onChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.updateForm({ currency }));
+    },
+    [dispatch]
+  );
+
+  const onChangeCountry = useCallback(
+    (country: Country) => {
+      dispatch(profileActions.updateForm({ country }));
+    },
+    [dispatch]
+  );
+
   const onProfileSave = useCallback(() => {
     dispatch(updateProfileData());
   }, [dispatch]);
@@ -68,6 +112,12 @@ const ProfilePage: React.FC<Props> = (props) => {
           error={error}
           onProfileNameChange={onProfileNameChange}
           onProfileSurnameChange={onProfileSurnameChange}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicModuleLoader>

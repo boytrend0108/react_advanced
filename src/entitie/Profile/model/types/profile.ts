@@ -1,4 +1,5 @@
-import { Country, Currency } from "shared/const/common";
+import { Country } from "entitie/Country";
+import { Currency } from "entitie/Currency";
 
 export interface Profile {
   name?: string,
@@ -7,6 +8,7 @@ export interface Profile {
   country?: Country,
   city?: string,
   age?: number,
+  username?: string,
   email?: string,
   avatar?: string
 }

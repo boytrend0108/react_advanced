@@ -4,6 +4,7 @@
   "Cancel": "Cancel",
   "Edit Profile": "Edit Profile",
   "Enter": "Bойти",
+  "Enter an avatar link": "Enter an avatar link",
   "Enter your name": "Enter your name",
   "Enter your surname": "Enter your surname",
   "Error:": "Error:",
@@ -33,10 +34,16 @@
   "ProfilePage": "ProfilePage",
   "Restart": "Перезавантажити",
   "Save": "Save",
+  "Select currency": "Select currency",
   "ShortLang": "Ua",
   "Something went wrong": "Щось пішло не так..",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Ваш возраст": "Ваш возраст",
+  "Введите имя пользователя": "Введите имя пользователя",
+  "Введите ссылку на аватар": "Введите ссылку на аватар",
+  "Город": "Город",
+  "Укажите страну": "Укажите страну"
 }
