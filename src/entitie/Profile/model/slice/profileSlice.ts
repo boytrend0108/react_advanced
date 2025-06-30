@@ -8,6 +8,7 @@ const initialState: ProfileSchema = {
   form: null,
   isLoading: false,
   error: '',
+  validateErrors: undefined,
   readonly: true,
 }
 
@@ -33,6 +34,7 @@ export const profileSlice = createSlice({
     cancelEdit: (state) => {
       state.readonly = true;
       state.form = state.data;
+      state.validateErrors = undefined; // Reset validation errors on cancel
     },
 
   },
@@ -54,18 +56,18 @@ export const profileSlice = createSlice({
 
     builder.addCase(updateProfileData.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
+      state.validateErrors = undefined;
     })
     builder.addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
       state.isLoading = false;
-      state.error = null;
+      state.validateErrors = undefined;
       state.data = action.payload;
       state.form = action.payload; // Assuming you want to keep the form in sync with the fetched data
       state.readonly = true; // Set readonly to true after update
     })
     builder.addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload || 'An error occurred while update profile';
+      state.validateErrors = action.payload;
     })
   },
 })

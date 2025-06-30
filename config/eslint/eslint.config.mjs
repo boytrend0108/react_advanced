@@ -49,6 +49,7 @@ export default [
       globals: {
         __IS_DEV__: 'writable',
         __API__: 'writable',
+        __PROJECT__: 'writable',
         __dirname: 'writable',
         React: 'readonly',
         describe: 'readonly',
