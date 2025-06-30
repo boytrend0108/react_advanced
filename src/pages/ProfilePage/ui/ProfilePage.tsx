@@ -7,6 +7,7 @@ import {
   fetchProfileData,
   getProfileError,
   getProfileIsLoading,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
@@ -21,6 +22,9 @@ import {
 } from 'shared/lib/classNames/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfilePageHeader } from './components/ProfilePageHeader/ProfilePageHeader';
 import { getProfileForm } from 'entitie/Profile/model/selectors/getProfileForm/getProfileForm';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { ValidateProfileError } from 'entitie/Profile/model/types/profile';
+import { useTranslation } from 'react-i18next';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -36,6 +40,16 @@ const ProfilePage: React.FC<Props> = (props) => {
   const form = useAppSelector(getProfileForm);
   const isLoading = useAppSelector(getProfileIsLoading);
   const error = useAppSelector(getProfileError);
+  const validateErrors = useAppSelector(getProfileValidateErrors);
+  const { t } = useTranslation('profile');
+
+  const validateErrorTranslates = {
+    [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+    [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+  };
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -105,6 +119,15 @@ const ProfilePage: React.FC<Props> = (props) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={cn('', className)} {...otherProps}>
         <ProfilePageHeader onProfileSave={onProfileSave} />
+
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
+            <Text
+              key={err}
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[err]}
+            />
+          ))}
 
         <ProfileCard
           data={form}

@@ -14,7 +14,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface Props {
   className?: string;
-  data: Profile | null;
+  data?: Profile;
   error?: string;
   isLoading: boolean;
   onProfileNameChange?: (value: string) => void;
