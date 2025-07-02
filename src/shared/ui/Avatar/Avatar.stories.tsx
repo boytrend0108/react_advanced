@@ -81,14 +81,6 @@ export const WithoutAlt: Story = {
   },
 };
 
-export const BrokenImage: Story = {
-  args: {
-    src: 'broken-image-url.jpg',
-    alt: 'Broken Image Avatar',
-    size: 100,
-  },
-};
-
 export const Dark: Story = {
   args: {
     src: SAMPLE_AVATAR_URL,
