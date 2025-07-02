@@ -52,7 +52,10 @@ const ProfilePage: React.FC<Props> = (props) => {
   };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      // Only fetch profile data if not in Storybook mode
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onProfileNameChange = useCallback(

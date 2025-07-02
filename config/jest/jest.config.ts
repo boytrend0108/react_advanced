@@ -45,8 +45,9 @@ const config: Config = {
     "<rootDir>src"
   ],
   globals: {
-    "__IS_DEV__": true,
-    "__API__": '',
+    __IS_DEV__: true,
+    __API__: '',
+    __PROJECT__: 'jest',
   },
 
 
