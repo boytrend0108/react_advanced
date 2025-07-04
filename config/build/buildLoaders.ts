@@ -8,21 +8,33 @@ type Rules = false | "" | 0 | webpack.RuleSetRule | "...";
 // The loaders allow to process files that are not js files (like ts, png, etc)
 
 export function buildLoaders(options: BuildOptions): Rules[] {
-  const typeScriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
-
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
       options: {
-        "presets": ["@babel/preset-env", "@babel/preset-typescript"],
+        presets: [
+          "@babel/preset-env",
+          "@babel/preset-typescript",
+          [
+            "@babel/preset-react",
+            {
+              runtime: "automatic",
+              development: options.isDev,
+              importSource: options.isDev ? "@welldone-software/why-did-you-render" : "react"
+            }
+          ]
+        ],
+        plugins: [options.isDev && require.resolve('react-refresh/babel')].filter(Boolean),
       },
     }
+  };
+
+  const typeScriptLoader = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
   };
 
   const sassLoader = buildCssLoaders(options.isDev)

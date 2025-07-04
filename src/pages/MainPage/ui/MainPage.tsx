@@ -5,7 +5,7 @@ const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
-    <div className='MainPage'>
+    <div className='MainPage' style={{ color: 'blue' }}>
       <h1>{t('MainPage')}</h1>
       <Counter />
     </div>
