@@ -7,7 +7,7 @@
       {
         "runtime": "automatic",
         "development": "process.env.NODE_ENV === 'development'",
-        "importSource": "@welldone-software/why-did-you-render"
+        "importSource": "react"
       }
     ]
   ],
@@ -26,5 +26,10 @@
         "fallbackNS": "translation"
       }
     ]
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-refresh/babel"]
+    }
+  }
 }

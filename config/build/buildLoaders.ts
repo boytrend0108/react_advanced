@@ -2,29 +2,21 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildCssLoaders } from "./loaders/buildCssLoader";
 import { buildSvgLoader } from "./loaders/buildSvgLoader";
+import { buildBabelLoader } from "./loaders/buildBabelLoader";
 
 type Rules = false | "" | 0 | webpack.RuleSetRule | "...";
 
 // The loaders allow to process files that are not js files (like ts, png, etc)
 
 export function buildLoaders(options: BuildOptions): Rules[] {
+
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
 
-  const babelLoader = {
-    test: /\.(js|jsx|ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: "babel-loader",
-      options: {
-        "presets": ["@babel/preset-env", "@babel/preset-typescript"],
-      },
-    }
-  };
-
+  const babelLoader = buildBabelLoader(options);
   const sassLoader = buildCssLoaders(options.isDev)
   const svgLoader = buildSvgLoader();
 
