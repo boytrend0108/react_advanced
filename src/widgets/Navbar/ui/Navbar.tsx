@@ -10,6 +10,8 @@ import {
   useAppSelector,
 } from 'app/providers/StoreProvider/store.hooks';
 import { getUserAuthData, userActions } from 'entitie/User';
+import { useNavigate } from 'react-router';
+import { routePath } from 'shared/config/routerConfig/routerConfig';
 
 interface Props {
   className?: string;
@@ -20,6 +22,7 @@ export const Navbar: React.FC<Props> = memo(({ className }) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const user = useAppSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -31,7 +34,8 @@ export const Navbar: React.FC<Props> = memo(({ className }) => {
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
-  }, [dispatch]);
+    navigate(routePath.main);
+  }, [dispatch, navigate]);
 
   if (user) {
     return (
