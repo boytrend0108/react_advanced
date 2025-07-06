@@ -5,4 +5,10 @@
   --secondary-color: #E0E0E0;
   --inverted-primary-color: #616161;
   --inverted-secondary-color: #9E9E9E;
+
+
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  --code-bg: #fff;
 }
