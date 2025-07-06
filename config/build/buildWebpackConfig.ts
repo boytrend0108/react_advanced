@@ -15,6 +15,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     output: {
       filename: '[name].[contenthash].js', // contenthash - add suffix to the file.name
       path: paths.build,
+      publicPath: "/", // to handle ./artixles/:id
       clean: true, //delete old files
     },
 
