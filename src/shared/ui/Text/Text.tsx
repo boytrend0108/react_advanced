@@ -12,12 +12,18 @@ export enum TextAlign {
   RIGHT = 'right',
 }
 
+export enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
+}
+
 interface Props {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
   align?: TextAlign;
+  size?: TextSize;
 }
 
 export const Text: React.FC<Props> = (props) => {

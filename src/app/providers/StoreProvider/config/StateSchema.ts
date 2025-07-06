@@ -5,6 +5,7 @@ import { Action, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/tool
 import { ProfileSchema } from "entitie/Profile";
 import { NavigateFunction } from "react-router";
 import { AxiosInstance } from "axios";
+import { ArticleDetailsSchema } from "entitie/Article/model/types/articleDetailsSchema";
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -13,6 +14,7 @@ export interface StateSchema {
   //async reducers
   loginForm?: LoginSchema
   profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
